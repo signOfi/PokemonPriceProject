@@ -1,0 +1,16 @@
+.refresh-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #007bff; /* Bootstrap primary color for example */
+    font-size: 24px; /* Adjust size as needed */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh-button:disabled {
+    color: #ccc; /* Disabled state color */
+    cursor: not-allowed;
+}

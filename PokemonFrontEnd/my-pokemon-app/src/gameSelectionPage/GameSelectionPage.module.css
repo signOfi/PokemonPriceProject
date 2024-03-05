@@ -1,0 +1,74 @@
+body {
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#5292dd 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#5292dd 0.7000000000000001px, #e5e5f7 0.7000000000000001px);
+    background-size: 28px 28px;
+    background-position: 0 0,14px 14px;
+}
+
+.game-container {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.platform-row {
+    margin-bottom: 40px;
+}
+
+.platform-row h2 {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.game-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-item {
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+}
+
+.game-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.game-image:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+.game-title {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the text color as needed */
+    font-weight: 20;
+}
+
+/* You can add platform-specific styles using the platform class */
+.gb_gbc .game-item {
+    /* Styles for Game Boy/Game Boy Color games */
+}
+
+.gba .game-item {
+    /* Styles for Game Boy Advance games */
+}
+
+.ds .game-item {
+    /* Styles for DS games */
+}
+
+.ds3d .game-item {
+    /* Styles for 3DS games */
+}
+
+.switch .game-item {
+    /* Styles for Switch games */
+}

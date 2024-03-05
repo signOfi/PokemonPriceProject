@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.game-details-container {
+    max-width: 700px;
+    margin: 20px;
+    padding: 0;
+    text-align: left; /* Align content to the left */
+    border-radius: 8px; /* Optional: rounds corners */
+}
+
+.game-image {
+    max-width: 30%; /* Ensures image is responsive and does not exceed its container width */
+    max-height: 400px; /* Adjust this value to control the size of the image */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Allows use of margin for centering if needed */
+    margin-bottom: 20px; /* Space between the image and the text below it */
+}
+
+.game-title {
+    font-size: 30px;
+    margin-bottom: 10px; /* Adjust space between title and prices */
+    color: #070707;
+    font-weight: bolder;
+}
+
+.game-price {
+    font-size: 18px;
+    padding: 15px;
+    margin: 5px 0; /* Adjust spacing around prices for tighter layout */
+    color: #333232; /* Text color for prices */
+    font-weight: bold;
+}
