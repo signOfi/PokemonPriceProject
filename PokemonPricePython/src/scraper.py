@@ -5,16 +5,9 @@ from videogame import VideoGame
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-
-# console names as they appear in pricecharting.com URLs
 CONSOLES = ["nintendo-3ds", "nintendo-ds", "gameboy-advance", "gameboy", "gameboy-color", "nintendo-switch"]
-
-# produce exception "Failed to decode response from marionette" in main()
 TROUBLE_CONSOLES_MARIONETTE = ["psp", "nintendo-3ds", "atari-7800", "jaguar"]
-
-# produce exception "invalid argument: can't kill an exited process" in main()
 TROUBLE_CONSOLES_KILL = ["sega-cd", "gameboy-color", "playstation-vita", "atari-lynx"]
-
 
 def create_csv_file(all_games, filename="pokemon_games_prices.csv"):
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
@@ -25,21 +18,12 @@ def create_csv_file(all_games, filename="pokemon_games_prices.csv"):
 
 
 def scrollBottom(console):
-    """Scrolls to the bottom of webpage. pricecharting.com/console/<console-name> loads x number of videogames at a time, this loads all
-        videogames for our console before we scrape values
-
-    Args:
-        console: (string) game system name as it appears in the pricecharting URL
-
-    Returns:
-        (browser) html for webpage with all values loaded
-    """
     SCROLL_PAUSE_TIME = 1
     browser = webdriver.Firefox()
 
     browser.get('https://www.pricecharting.com/console/' + console)
     prevHeight = browser.execute_script("return document.body.scrollHeight")
-    atBottom = False  # occasionally selenium lags, this ensures that we are truly at the bottom
+    atBottom = False  
     while True:
         time.sleep(SCROLL_PAUSE_TIME)
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -56,15 +40,6 @@ def scrollBottom(console):
 
 
 def scrapeVals(console, browser):
-    """Scrapes titles and values for each Pokémon videogame in our webpage
-
-    Args:
-        console: (string) game system name as it appears in the pricecharting URL
-        browser: (browser) html for webpage with all values loaded
-
-    Returns:
-        (list) Pokémon videogame objects for our console
-    """
     pokemon_games = []
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     for EachPart in soup.select('tr[id*="product-"]'):
@@ -83,14 +58,6 @@ def scrapeVals(console, browser):
 
 
 def pullVals(console):
-    """Pulls values from pricecharting.com
-
-    Args:
-        console: (string) game system name as it appears in the pricecharting URL
-
-    Returns:
-        (list) videogame objects
-    """
     print('Pulling values for %s console\n' % (console))
     browser = scrollBottom(console)
     return scrapeVals(console, browser)
