@@ -43,32 +43,13 @@ body {
 }
 
 .game-image:hover {
-    transform: scale(1.05); /* Slightly increase the size on hover */
+    transform: scale(1.05); 
 }
 
 .game-title {
-    font-size: 16px; /* Adjust the font size as needed */
-    color: #333; /* Adjust the text color as needed */
+    font-size: 16px; 
+    color: #333;
     font-weight: 20;
 }
 
-/* You can add platform-specific styles using the platform class */
-.gb_gbc .game-item {
-    /* Styles for Game Boy/Game Boy Color games */
-}
-
-.gba .game-item {
-    /* Styles for Game Boy Advance games */
-}
-
-.ds .game-item {
-    /* Styles for DS games */
-}
-
-.ds3d .game-item {
-    /* Styles for 3DS games */
-}
-
-.switch .game-item {
-    /* Styles for Switch games */
-}
+=
