@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './GameSelectionPage.module.css'; // Ensure this path is correct
+import styles from './GameSelectionPage.module.css'; 
 import { useNavigate } from 'react-router-dom';
 
 const fetchGames = async () => {
@@ -15,21 +15,19 @@ const fetchGames = async () => {
 
 const GameSelectionPage = () => {
     const [games, setGames] = useState({});
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate(); 
 
     // Moved inside GameSelectionPage component
     const handleGameClick = (gameName) => {
-        navigate(`/game-details/${encodeURIComponent(gameName)}`); // Navigate to game details page
+        navigate(`/game-details/${encodeURIComponent(gameName)}`); 
     };
 
     useEffect(() => {
         const loadGames = async () => {
             try {
                 let gamesData = await fetchGames();
-                // Filter out games with 'invalid.webp' image path
                 gamesData = gamesData.filter(game => game.imageUrl !== 'invalid.webp');
 
-                // Deduplicate games by title (assuming titles are unique identifiers)
                 const uniqueGames = [];
                 const seenTitles = new Set();
 
