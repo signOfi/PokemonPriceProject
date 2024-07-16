@@ -2,8 +2,8 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: #007bff; /* Bootstrap primary color for example */
-    font-size: 24px; /* Adjust size as needed */
+    color: #007bff; 
+    font-size: 24px; 
     padding: 10px;
     display: flex;
     align-items: center;
@@ -11,6 +11,6 @@
 }
 
 .refresh-button:disabled {
-    color: #ccc; /* Disabled state color */
+    color: #ccc; 
     cursor: not-allowed;
 }
